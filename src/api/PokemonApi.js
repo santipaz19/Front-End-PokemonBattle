@@ -4,7 +4,7 @@ const url = 'https://back-end-pokemonbattle.onrender.com/';  // Cambia esto a la
 const local = 'http://localhost:3001';
 
 export const PokemonApi = axios.create({
-    baseURL: local,  // Cambia a `url` si prefieres usar la URL del deploy.
+    baseURL: url,  // Cambia a `url` si prefieres usar la URL del deploy.
 });
 
 // Método para obtener todos los Pokémon
