@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'URL_DEPLOY';  // Cambia esto a la URL del deploy si es necesario.
+const url = 'https://back-end-pokemonbattle.onrender.com/';  // Cambia esto a la URL del deploy si es necesario.
 const local = 'http://localhost:3001';
 
 export const PokemonApi = axios.create({
