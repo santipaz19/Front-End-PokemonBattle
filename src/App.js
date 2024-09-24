@@ -7,12 +7,14 @@ import BattleLog from './components/BattleResult/BattleResult';
 import { usePokemonBattle } from './hooks/usePokemonBattle';
 import Navbar from './components/NavBar/navbar';
 import PokemonModal from './components/PokemonModal/PokemonModal';
+import CreatePokemonModal from './components/CreatePokemonModal/CreatePokemonModal';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
-  const [openModal, setOpenModal] = useState(false); // Estado para manejar la apertura del modal
-  const [selectedPokemon, setSelectedPokemon] = useState(null); // Estado para almacenar el Pokémon seleccionado para el modal
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [searchText, setSearchText] = useState('');
+  const [openCreateModal, setOpenCreateModal] = useState(false); // Estado para manejar el modal de creación
 
   // hook de batalla
   const {
@@ -27,7 +29,6 @@ function App() {
   const fetchPokemons = async () => {
     try {
       const response = await PokemonApi.getPokemons();
-      console.log(response.data);
       setPokemons(response.data);
     } catch (error) {
       console.error('Error fetching pokemons:', error);
@@ -57,7 +58,30 @@ function App() {
 
   // Función para limpiar los filtros
   const clearFilters = () => {
-    setSearchText(''); // Reinicia el texto de búsqueda
+    setSearchText('');
+  };
+
+  // Función para abrir el modal de creación
+  const handleOpenCreateModal = () => {
+    setOpenCreateModal(true);
+  };
+
+  // Función para cerrar el modal de creación
+  const handleCloseCreateModal = () => {
+    setOpenCreateModal(false);
+  };
+
+  // Función para añadir el nuevo Pokémon usando la API
+  const handleCreatePokemon = async (newPokemon) => {
+    try {
+
+      const response = await PokemonApi.createPokemon(newPokemon);
+
+      setPokemons([...pokemons, response.data]);
+    } catch (error) {
+      console.error('Error creating new pokemon:', error);
+    }
+    setOpenCreateModal(false);
   };
 
   return (
@@ -65,31 +89,27 @@ function App() {
       <Navbar searchText={searchText} setSearchText={setSearchText} />
       <div className='gap-3 flex flex-col justify-center items-center pt-2 px-4'>
         <div className='justify-between flex lg:w-[49rem] w-full'>
-          <h1 className='text-3xl md:text-start text-center  text-[#ECF0F1]'>Select your Pokemon</h1>
+          <h1 className='text-3xl md:text-start text-center text-[#ECF0F1]'>Select your Pokemon</h1>
           <div className='flex gap-3'>
             <button
-              onClick={clearFilters}
+              onClick={handleOpenCreateModal} // Abre el modal de creación
               className="bg-cyan-400 text-white py-1 px-2 rounded hidden sm:flex"
             >
-              Crear pokemon
+              Crear Pokemon
             </button>
             <button
               onClick={clearFilters}
-              className="bg-red-500 text-white py-1 px-2 rounded hidden sm:flex  hover:bg-red-600"
+              className="bg-red-500 text-white py-1 px-2 rounded hidden sm:flex hover:bg-red-600"
             >
               Limpiar Filtros
             </button>
           </div>
-
         </div>
 
-
-
-
         <PokemonList
-          pokemons={filteredPokemons} // Pasar la lista filtrada de Pokémon
+          pokemons={filteredPokemons}
           onSelectPokemon={handleSelectPokemon}
-          onOpenModal={handleOpenModal} // Pasamos la función para abrir el modal
+          onOpenModal={handleOpenModal}
         />
 
         <BattleLog
@@ -107,11 +127,18 @@ function App() {
           battleData={battleData}
         />
 
-        {/* Componente Modal */}
+        {/* Componente Modal de Información de Pokémon */}
         <PokemonModal
           open={openModal}
           onClose={handleCloseModal}
           pokemon={selectedPokemon}
+        />
+
+        {/* Componente Modal para Crear Pokémon */}
+        <CreatePokemonModal
+          open={openCreateModal}
+          onClose={handleCloseCreateModal}
+          onCreatePokemon={handleCreatePokemon}
         />
       </div>
     </div>
