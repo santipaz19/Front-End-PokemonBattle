@@ -22,7 +22,11 @@ El proyecto se ejecutará en http://localhost:3000.
 
 ## Estructura del Proyecto
 src/: Contiene el código fuente del proyecto.
+
 api/: Módulos para interactuar con las API.
+
 components/: Componentes de React modularizados.
+
 hooks/: Hooks personalizados para gestionar el estado y efectos.
+
 App.js: Archivo principal que ensambla y renderiza los componentes.
