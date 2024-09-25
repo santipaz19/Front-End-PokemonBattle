@@ -11,7 +11,7 @@ const PokemonCardStats = ({ pokemon, pokemonHp, handleRemovePokemon, onlyRead })
     return (
         <Card
             sx={{
-                width: { xs: 200, md: 250 }, // Ancho responsive
+                width: { xs: 200, md: 250 },
                 height: { md: 400 },
                 bgcolor: '#E0F7FA'
             }}
@@ -24,7 +24,7 @@ const PokemonCardStats = ({ pokemon, pokemonHp, handleRemovePokemon, onlyRead })
             <CardMedia
                 component="img"
                 sx={{
-                    height: { xs: 120, sm: 150, md: 180 }, // Altura de imagen responsive
+                    height: { xs: 120, sm: 150, md: 180 },
                     objectFit: 'contain',
                 }}
                 image={pokemon?.imageUrl}

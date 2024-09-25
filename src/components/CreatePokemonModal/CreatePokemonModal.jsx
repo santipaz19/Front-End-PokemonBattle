@@ -38,15 +38,15 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validar que todos los campos necesarios estén llenos
+        // Validaciones
         const { name, id, type, imageUrl } = pokemonData;
         if (!name || !id || !type || !imageUrl) {
-            setErrorMessage('Por favor, completa todos los campos.'); // Establecer mensaje de error
-            return; // Detener la ejecución si hay campos vacíos
+            setErrorMessage('Por favor, completa todos los campos.');
+            return; // Detener la ejecución si hay errores
         }
 
         onCreatePokemon(pokemonData); // Pasamos el nuevo Pokémon al padre
-        onClose(); // Cerramos el modal después de crear
+        onClose();
     };
 
     return (

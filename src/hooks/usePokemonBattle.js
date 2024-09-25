@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { PokemonApi } from '../api/PokemonApi';
 
 export const usePokemonBattle = () => {
-    const [battleData, setBattleData] = useState(null); // Estado para almacenar respuesta de la batalla
-    const [selectedPokemons, setSelectedPokemons] = useState([]); // Estado para almacenar los Pokémon seleccionados
-    const [errors, setErrors] = useState(''); // Estado para almacenar mensajes de error
+    const [battleData, setBattleData] = useState(null); // respuesta de la batalla
+    const [selectedPokemons, setSelectedPokemons] = useState([]); //  Pokémon seleccionados
+    const [errors, setErrors] = useState('');
 
     // Función para manejar la selección de un Pokémon
     const handleSelectPokemon = (pokemon) => {
@@ -27,11 +27,11 @@ export const usePokemonBattle = () => {
                 return [...prev.slice(0, indexToRemove), ...prev.slice(indexToRemove + 1)];
             }
 
-            return prev; // Devolver la lista original si no se encuentra el Pokémon
+            return prev;
         });
 
         setBattleData(null);
-        setErrors(''); // Limpiar errores al eliminar un Pokémon
+        setErrors('');
     };
 
     // Función para iniciar la batalla

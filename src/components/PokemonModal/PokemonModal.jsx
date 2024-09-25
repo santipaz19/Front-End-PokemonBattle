@@ -7,14 +7,13 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: { xs: '70%', sm: 400 }, // Puedes ajustar el tamaño según sea necesario
+    width: { xs: '70%', sm: 400 },
     bgcolor: 'white',
-
     borderRadius: 2,
-    display: 'flex', // Cambiar a flex
-    flexDirection: 'column', // Cambiar a columna
-    alignItems: 'center', // Alinear elementos al centro
-    justifyContent: 'center', // Centrar verticalmente
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
     boxShadow: 24,
     pt: 3,
     pb: 2,
