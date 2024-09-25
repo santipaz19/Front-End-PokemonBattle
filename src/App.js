@@ -97,12 +97,12 @@ function App() {
           onOpenModal={handleOpenModal}
         />
 
-        <BattleLog
+        {battleData || errors ? <BattleLog
           pokemon1={selectedPokemons[0]}
           pokemon2={selectedPokemons[1]}
           battleData={battleData}
           errors={errors}
-        />
+        /> : null}
 
         <PokemonBattle
           pokemon1={selectedPokemons[0]}
