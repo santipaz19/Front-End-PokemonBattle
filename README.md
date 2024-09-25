@@ -12,7 +12,7 @@ En caso de utilizar el deploy esperar unos minutos a que se levante el servidor 
 1. **Clonar el repositorio:**
 
    ```bash
-   git clone https://github.com/tu-usuario/pokemon-battle-frontend.git
+   git clone https://github.com/santipaz19/Front-End-PokemonBattle.git
    cd pokemon-battle-frontend
 2. **Instalar dependencias: Usando npm:**
 
