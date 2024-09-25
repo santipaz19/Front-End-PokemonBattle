@@ -4,6 +4,7 @@ Este proyecto es la interfaz de usuario para la aplicación Pokémon Battle. A c
 
 # Deploy:
 https://pokemon-battle-santiago.vercel.app/
+
 En caso de utilizar el deploy esperar unos minutos a que se levante el servidor debido a que esta levantado en render y en el plan gratis al estar inactivo se apaga
 
 ## Instalación
