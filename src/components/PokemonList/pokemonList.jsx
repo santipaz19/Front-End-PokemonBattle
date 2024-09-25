@@ -20,7 +20,7 @@ const PokemonList = ({ pokemons, onSelectPokemon, onOpenModal }) => {
             }}
         >
             {pokemons.length === 0 ? (
-                <Typography variant="h6" color="textSecondary" sx={{ minHeight: 100, mt: 10 }}>
+                <Typography variant="h6" color="#ECF0F1" sx={{ minHeight: 100, mt: 10 }}>
                     No hay Pokémon disponibles.
                 </Typography>
             ) : (
