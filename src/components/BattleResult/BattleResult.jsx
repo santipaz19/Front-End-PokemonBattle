@@ -35,26 +35,24 @@ const BattleLog = ({ battleData, pokemon1, pokemon2, errors }) => {
     return (
         <Box sx={{ padding: 2 }} >
             <Box
-
                 sx={{
                     marginTop: 2,
                     backgroundColor: "#e3f8fe",
                     padding: 3,
                     border: "solid 1px black",
                     borderRadius: 2,
-                    // Ancho responsivo
                     width: {
                         sm: "100%",
 
                         md: "49rem",
                     },
                     minWidth: "10rem",
-                    maxWidth: "100%", // Asegurarse de que nunca exceda el 100%
+                    maxWidth: "100%",
                 }}
             >
                 {currentTurn < battleData?.turns?.length && (
                     <Typography variant="body1">
-                        {currentMessage} {/* Muestra solo el mensaje actual */}
+                        {currentMessage}
                     </Typography>
                 )}
                 {currentTurn >= battleData?.turns?.length && (

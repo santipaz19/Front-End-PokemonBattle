@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 
 const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
-    // Estado para manejar los campos del nuevo Pokémon
+
     const [pokemonData, setPokemonData] = useState({
         name: '',
         id: '',
@@ -20,7 +20,6 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
         imageUrl: '',
     });
 
-    // Estado para manejar el mensaje de error
     const [errorMessage, setErrorMessage] = useState('');
 
     // Manejar los cambios en los campos del formulario
@@ -63,7 +62,7 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                     py: 2,
                     boxShadow: 24,
                     borderRadius: 1,
-                    width: 450,
+                    width: { xs: 300, sm: 450 },
                 }}
             >
                 <h2 className='mb-2'>Crear nuevo Pokémon</h2>

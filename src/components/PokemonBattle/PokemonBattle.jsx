@@ -57,7 +57,7 @@ const PokemonBattle = ({ pokemon1, pokemon2, handleRemovePokemon, startBattle, b
                 justifyContent="center"
                 alignItems="center"
                 sx={{
-                    flexDirection: { xs: 'column', sm: 'row' }, // En pantallas pequeñas, usa columna, en pantallas grandes usa fila
+                    flexDirection: { xs: 'column', sm: 'row' },
                 }}
             >
                 {pokemon1 && (
@@ -78,7 +78,7 @@ const PokemonBattle = ({ pokemon1, pokemon2, handleRemovePokemon, startBattle, b
                         sx={{
                             backgroundColor: "#3498DB",
                             width: { xs: '100%', sm: 'auto' },
-                            marginTop: { xs: 2, sm: 0 },
+
                             '&:hover': {
                                 backgroundColor: "#2980B9",
                             },

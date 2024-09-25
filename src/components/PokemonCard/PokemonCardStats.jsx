@@ -13,7 +13,7 @@ const PokemonCardStats = ({ pokemon, pokemonHp, handleRemovePokemon, onlyRead })
             sx={{
                 width: { xs: 200, md: 250 }, // Ancho responsive
                 height: { md: 400 },
-
+                bgcolor: '#E0F7FA'
             }}
         >
             {!onlyRead && <CardActions>
@@ -45,7 +45,7 @@ const PokemonCardStats = ({ pokemon, pokemonHp, handleRemovePokemon, onlyRead })
                     sx={{
                         marginBottom: '5px',
                         backgroundColor: '#e0e0e0',
-                        '& .MuiLinearProgress-bar': { backgroundColor: 'green' },
+                        '& .MuiLinearProgress-bar': { backgroundColor: '#4CAF50' },
                         borderRadius: '5px',
                     }}
                 />
@@ -60,7 +60,7 @@ const PokemonCardStats = ({ pokemon, pokemonHp, handleRemovePokemon, onlyRead })
                     sx={{
                         marginBottom: '5px',
                         backgroundColor: '#e0e0e0',
-                        '& .MuiLinearProgress-bar': { backgroundColor: 'red' },
+                        '& .MuiLinearProgress-bar': { backgroundColor: '#F44336' },
                         borderRadius: '5px',
                     }}
                 />
@@ -75,7 +75,7 @@ const PokemonCardStats = ({ pokemon, pokemonHp, handleRemovePokemon, onlyRead })
                     sx={{
                         marginBottom: '5px',
                         backgroundColor: '#e0e0e0',
-                        '& .MuiLinearProgress-bar': { backgroundColor: 'yellow' },
+                        '& .MuiLinearProgress-bar': { backgroundColor: '#FFC107' },
                         borderRadius: '5px',
                     }}
                 />
@@ -90,7 +90,7 @@ const PokemonCardStats = ({ pokemon, pokemonHp, handleRemovePokemon, onlyRead })
                     sx={{
                         marginBottom: '5px',
                         backgroundColor: '#e0e0e0',
-                        '& .MuiLinearProgress-bar': { backgroundColor: 'blue' },
+                        '& .MuiLinearProgress-bar': { backgroundColor: '#2196F3' },
                         borderRadius: '5px',
                     }}
                 />

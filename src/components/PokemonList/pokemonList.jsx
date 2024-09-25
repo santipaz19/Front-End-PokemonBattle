@@ -12,14 +12,14 @@ const PokemonList = ({ pokemons, onSelectPokemon, onOpenModal }) => {
     return (
         <div className='flex justify-center flex-col items-center gap-3 w-full'
             style={{
-                overflowX: 'auto', // Habilita el scroll horizontal
+                overflowX: 'auto',
                 display: 'flex',
                 flexDirection: 'row',
                 flexWrap: 'nowrap',
-                paddingBottom: '1rem' // Espacio extra para el scroll
+                paddingBottom: '1rem'
             }}
         >
-            {pokemons.length === 0 ? ( // Verifica si no hay Pokémon
+            {pokemons.length === 0 ? (
                 <Typography variant="h6" color="textSecondary" sx={{ minHeight: 100, mt: 10 }}>
                     No hay Pokémon disponibles.
                 </Typography>
@@ -27,7 +27,7 @@ const PokemonList = ({ pokemons, onSelectPokemon, onOpenModal }) => {
                 <Grid2 container spacing={4} sx={{ flexWrap: { xs: 'nowrap', md: 'wrap' } }}>
                     {pokemons.map((pokemon) => (
                         <Grid2 item key={pokemon?.id} xs={12} sm={6} md={4} sx={{ flex: '0 0 auto' }}>
-                            <Card sx={{ width: 160, height: 200 }}>
+                            <Card sx={{ width: 160, height: 200, bgcolor: '#E0F7FA' }}>
                                 <CardActionArea onClick={() => onSelectPokemon(pokemon)}>
                                     <CardMedia
                                         component="img"

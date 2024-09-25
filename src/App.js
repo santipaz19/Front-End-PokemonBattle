@@ -8,6 +8,7 @@ import { usePokemonBattle } from './hooks/usePokemonBattle';
 import Navbar from './components/NavBar/navbar';
 import PokemonModal from './components/PokemonModal/PokemonModal';
 import CreatePokemonModal from './components/CreatePokemonModal/CreatePokemonModal';
+import Header from './components/Header/Header';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -61,22 +62,19 @@ function App() {
     setSearchText('');
   };
 
-  // Función para abrir el modal de creación
+
   const handleOpenCreateModal = () => {
     setOpenCreateModal(true);
   };
 
-  // Función para cerrar el modal de creación
   const handleCloseCreateModal = () => {
     setOpenCreateModal(false);
   };
 
-  // Función para añadir el nuevo Pokémon usando la API
+  // Función para añadir el nuevo Pokémon 
   const handleCreatePokemon = async (newPokemon) => {
     try {
-
       const response = await PokemonApi.createPokemon(newPokemon);
-
       setPokemons([...pokemons, response.data]);
     } catch (error) {
       console.error('Error creating new pokemon:', error);
@@ -85,26 +83,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen min-w-screen bg-[#2C3E50] pb-10">
+    <div className="min-h-screen min-w-screen bg-[#34495E] pb-10">
       <Navbar searchText={searchText} setSearchText={setSearchText} />
       <div className='gap-3 flex flex-col justify-center items-center pt-2 px-4'>
-        <div className='justify-between flex lg:w-[49rem] w-full'>
-          <h1 className='text-3xl md:text-start text-center text-[#ECF0F1]'>Select your Pokemon</h1>
-          <div className='flex gap-3'>
-            <button
-              onClick={handleOpenCreateModal} // Abre el modal de creación
-              className="bg-cyan-400 text-white py-1 px-2 rounded hidden sm:flex"
-            >
-              Crear Pokemon
-            </button>
-            <button
-              onClick={clearFilters}
-              className="bg-red-500 text-white py-1 px-2 rounded hidden sm:flex hover:bg-red-600"
-            >
-              Limpiar Filtros
-            </button>
-          </div>
-        </div>
+        <Header
+          handleOpenCreateModal={handleOpenCreateModal}
+          clearFilters={clearFilters}
+        />
 
         <PokemonList
           pokemons={filteredPokemons}

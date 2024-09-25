@@ -8,7 +8,7 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: { xs: '70%', sm: 400 }, // Puedes ajustar el tamaño según sea necesario
-    bgcolor: '#FAEBD7',
+    bgcolor: 'white',
 
     borderRadius: 2,
     display: 'flex', // Cambiar a flex
@@ -17,6 +17,7 @@ const style = {
     justifyContent: 'center', // Centrar verticalmente
     boxShadow: 24,
     pt: 3,
+    pb: 2,
 };
 
 const PokemonModal = ({ open, onClose, pokemon }) => {
@@ -29,7 +30,7 @@ const PokemonModal = ({ open, onClose, pokemon }) => {
                     onlyRead={true}
                     pokemonHp={pokemon?.hp ? pokemon.hp * 10 : 0}
                 />
-                <Button onClick={onClose} sx={{ mt: 2, width: '100%' }}>
+                <Button onClick={onClose} sx={{ mt: 2, width: 'fit', color: 'white', bgcolor: '#3498DB' }}>
                     Cerrar
                 </Button>
             </Box>
