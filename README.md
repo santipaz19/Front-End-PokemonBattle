@@ -2,10 +2,20 @@
 
 Este proyecto es la interfaz de usuario para la aplicación Pokémon Battle. A continuación, se detallan las instrucciones para configurar y ejecutar el proyecto localmente.
 
+## Descripción de la Aplicación
+
+La aplicación permite:
+
+- **Seleccionar Pokémon**: Los usuarios pueden elegir Pokémon para que participen en batallas entre ellos.
+- **Batallar**: Los Pokémon seleccionados pueden enfrentarse en una batalla, donde se muestran los resultados.
+- **Crear Pokémon**: Los usuarios tienen la opción de crear nuevos Pokémon con atributos personalizados.
+- **Buscar Pokémon**: Se puede buscar Pokémon por nombre para encontrarlos fácilmente.
+- **Ver Información**: Los usuarios pueden ver información detallada sobre cada Pokémon.
+
 # Deploy:
 https://pokemon-battle-santiago.vercel.app/
 
-En caso de utilizar el deploy esperar unos minutos a que se levante el servidor debido a que esta levantado en render y en el plan gratis al estar inactivo se apaga
+En caso de utilizar el deploy esperar unos minutos a que se levante el servidor debido a que esta alojado en render y en el plan gratis al estar inactivo se apaga.
 
 ## Instalación
 
