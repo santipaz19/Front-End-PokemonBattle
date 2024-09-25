@@ -22,30 +22,26 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
 
     const [errorMessage, setErrorMessage] = useState('');
 
-    // Manejar los cambios en los campos del formulario
     const handleChange = (e) => {
         const { name, value } = e.target;
         setPokemonData({ ...pokemonData, [name]: value });
-        setErrorMessage(''); // Limpiar mensaje de error al cambiar el campo
+        setErrorMessage('');
     };
 
-    // Manejar cambios en los sliders
     const handleSliderChange = (name) => (event, value) => {
         setPokemonData({ ...pokemonData, [name]: value });
     };
 
-    // Manejar el envío del formulario
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validaciones
         const { name, id, type, imageUrl } = pokemonData;
         if (!name || !id || !type || !imageUrl) {
             setErrorMessage('Por favor, completa todos los campos.');
-            return; // Detener la ejecución si hay errores
+            return;
         }
 
-        onCreatePokemon(pokemonData); // Pasamos el nuevo Pokémon al padre
+        onCreatePokemon(pokemonData);
         onClose();
     };
 
@@ -75,7 +71,7 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         fullWidth
                         value={pokemonData.id}
                         onChange={handleChange}
-                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }} // Reducir altura
+                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }}
                     />
                     <TextField
                         label="Nombre"
@@ -84,7 +80,7 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         fullWidth
                         value={pokemonData.name}
                         onChange={handleChange}
-                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }} // Reducir altura
+                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }}
                     />
                     <TextField
                         label="Tipo"
@@ -93,7 +89,7 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         fullWidth
                         value={pokemonData.type}
                         onChange={handleChange}
-                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }} // Reducir altura
+                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }}
                     />
                     <TextField
                         label="Imagen"
@@ -102,9 +98,10 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         fullWidth
                         value={pokemonData.imageUrl}
                         onChange={handleChange}
-                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }} // Reducir altura
+                        sx={{ marginBottom: 1, '& .MuiOutlinedInput-root': { height: 49 } }}
                     />
-                    {/* Slider para HP */}
+
+                    {/* Slider para HP - Color verde */}
                     <Typography gutterBottom>HP</Typography>
                     <Slider
                         value={pokemonData.hp}
@@ -113,9 +110,10 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         min={1}
                         max={10}
                         valueLabelDisplay="auto"
-                        sx={{ marginBottom: 1 }}
+                        sx={{ marginBottom: 1, color: '#4CAF50' }}
                     />
 
+                    {/* Slider para Ataque - Color rojo */}
                     <Typography gutterBottom>Ataque</Typography>
                     <Slider
                         value={pokemonData.attack}
@@ -124,9 +122,10 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         min={1}
                         max={10}
                         valueLabelDisplay="auto"
-                        sx={{ marginBottom: 1 }}
+                        sx={{ marginBottom: 1, color: '#F44336' }}
                     />
 
+                    {/* Slider para Defensa - Color amarillo */}
                     <Typography gutterBottom>Defensa</Typography>
                     <Slider
                         value={pokemonData.defense}
@@ -135,9 +134,10 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         min={1}
                         max={10}
                         valueLabelDisplay="auto"
-                        sx={{ marginBottom: 1 }}
+                        sx={{ marginBottom: 1, color: '#FFC107' }}
                     />
 
+                    {/* Slider para Velocidad - Color azul */}
                     <Typography gutterBottom>Velocidad</Typography>
                     <Slider
                         value={pokemonData.speed}
@@ -146,7 +146,7 @@ const CreatePokemonModal = ({ open, onClose, onCreatePokemon }) => {
                         min={1}
                         max={10}
                         valueLabelDisplay="auto"
-                        sx={{ marginBottom: 1 }}
+                        sx={{ marginBottom: 1, color: '#2196F3' }}
                     />
 
                     {errorMessage && (
